@@ -352,5 +352,9 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
-##packages
-/packages
+#NUnit.ConsoleRunner
+#NUnit3TestAdapter
+#NUnitTestAdapter.WithFramework
+#Selenium.Firefox.WebDriver
+#Selenium.WebDriver
+#Selenium.WebDriver.ChromeDriver

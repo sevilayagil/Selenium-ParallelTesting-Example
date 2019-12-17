@@ -1,19 +1,37 @@
 ﻿using NUnit.Framework;
+using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SeleniumParalelTestingExample
 {
-    [TestFixture]
-     public class Hooks:Base
+     public enum BrowserType
     {
-        public Hooks()
+        CHROME,
+        FIREFOX,
+        IE
+    }
+    [TestFixture]
+     public class Hooks: Base
+    {
+        private BrowserType _browserType;
+
+        public Hooks(BrowserType browser)
         {
-            Driver = new FirefoxDriver();
+            _browserType = browser; 
+        }
+        [SetUp]
+        public void InitializeTest()
+        {
+            ChooseDriverInstance(_browserType);
+        }
+        private void ChooseDriverInstance(BrowserType browserType)
+        {
+            if (browserType == BrowserType.CHROME)
+                Driver = new ChromeDriver();
+            else if (browserType == BrowserType.FIREFOX)
+            {
+                Driver = new FirefoxDriver();
+            }
         }
     }
 }
