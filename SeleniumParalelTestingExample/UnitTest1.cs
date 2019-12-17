@@ -1,14 +1,25 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace SeleniumParalelTestingExample
 {
-    [TestClass]
-    public class UnitTest1
+    [TestFixture]
+    public class FirefoxTesting
     {
         [TestMethod]
-        public void TestMethod1()
+        public void FirefoxGoogleTest()
         {
+
+        }
+    }
+    [TestFixture]
+    public class ChromeTesting
+    {
+        [TestMethod]
+        public void ChromeGoogleTest()
+        {
+
         }
     }
 }
